@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foothills International School</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        #imageCarousel {
+            min-height: 600px !important;
+            background-color: red;
+        }
+
+        .carousel-inner {
+            background-color: aqua;
+            min-height: 600px !important;
+        }
+
+        .carousel-item {
+            background-color: blue;
+            min-height: 600px !important;
+        }
+
+        .carousel-item img {
+
+            min-height: 600px !important;
+            object-fit: cover;
+        }
+
+        .offcanvas-body p {
+            margin: 10% !important;
+
+        }
+
+        .offcanvas-body a {
+            text-decoration: none;
+            font-size: large;
+
+        }
+
+        .btn-close {
+            text-align: right !important;
+            align-self: flex-end;
+            margin: 20px;
+        }
+
+        @media only screen and (max-width:991px) {
+            .menu-items {
+                display: none;
+            }
+        }
+
+          
+
+    </style>
+
+</head>
+
+<body>
+    <!------------- NAVIGATION BAR ------------->
+    <!--Fees payment modal start-->
+
+    <div class="modal fade" tabindex="-1" id="checkPassword">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter password to access Payment and Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   <form id="checkpassword" class="p-2" novalidate>
+
+                    <input type="password" name="psswd" id="password" class="form-control form-control-md" placeholder="Enter password">
+
+                  </form>
+                </div>
+
+
+                <div class="modal-footer">
+                    <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button-->
+                    <button type="button" class="btn btn-primary" id="validatePassword">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--Modal end-->
+    
+    <nav class="navbar">
+        <div class="navbar-container container">
+
+            <ul class="menu-items ">
+                <!--li><a href="#">Dashboard</a></li-->
+                <!--li><a href="admin/dashboard.php">Dashboard</a></li-->
+                
+
+                <li><a href="student.php">Enrollment</a></li>
+                <li><a href="admin/staff_details.php">Staff Information</a></li>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#checkPassword" 
+                style="background-color: transparent; border: none; color: white; margin-left: 10px;">
+                Dashboard
+                </button>
+                <!--button type="button" data-bs-toggle="modal" data-bs-target="#checkPassword" 
+                style="background-color: transparent; border: none; color: white; margin-left: 10px;">
+                    Fees Payment
+                </button-->
+                
+                
+
+                <!--button type="button" data-toggle="modal" data-target="#checkPassword">Fees Payment</button-->
+               
+                <li><a href="logout.php">Log Out</a></li>
+            </ul>
+
+
+            <img src="assests/Foothills logo.jpeg" class="img logo" style="width:60px" alt="logo">
+            <button class=" btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                <i class="material-icons">menu</i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        <div class="offcanvas-body text-center">
+            <!--p><a href="admin/dashboard.php">Dashboard</a><br></p-->
+
+           
+
+            <p><a href="admin/student.php">Enrollment</a><br></p>
+            <p><a href="admin/staff_details.php">Staff Info</a><br></p>
+            <!--button type="button" data-bs-toggle="modal" data-bs-target="#checkPassword" 
+            style="background-color: transparent; border: none; color: white; margin-left: 10px;">
+            Dashboard
+            </button-->
+            <button type="button" data-bs-toggle="modal" data-bs-target="#checkPassword" 
+            style="background-color: transparent; border: none; color: rgb(6, 30, 240); margin-left: 10px;">
+                Dashboard
+            </button>
+            <!--p><a href="receipt.php">Fees Payment</a><br></p-->
+            <p><a href="logout.php">Log Out</a><br></p>
+        </div>
+    </div>
+    <!-- BOOTSTRAP CAROUSEL -->
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assests/Foothills bus.jpeg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="assests/Foothills students.jpeg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="assests/foothills_school.jpeg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkPasswordModal = new bootstrap.Modal(document.getElementById("checkPassword"));
+        const validatePasswordButton = document.getElementById("validatePassword");
+    
+        validatePasswordButton.addEventListener("click", function () {
+            // Replace 'your_password' with the actual correct password
+            const correctPassword = 'Brother';
+            const enteredPassword = document.getElementById("password").value;
+    
+            if (enteredPassword === correctPassword) {
+                // Password is correct, redirect to receipt.php
+                window.location.href = 'admin/dashboard.php';
+            } else {
+                // Password is incorrect, display an error message
+                alert("Incorrect password. Access denied.");
+                 // Redirect to receipt.php after displaying the "Access denied" message
+                window.location.href = 'home.html';
+                const invalidFeedback = document.querySelector(".invalid-feedback");
+                invalidFeedback.style.display = "block";
+                document.getElementById("password").classList.add("is-invalid");
+            }
+        });
+    
+        // Reset validation feedback when the password input is focused
+        document.getElementById("password").addEventListener("focus", function () {
+            const invalidFeedback = document.querySelector(".invalid-feedback");
+            invalidFeedback.style.display = "none";
+            document.getElementById("password").classList.remove("is-invalid");
+        });
+    });
+</script>
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
